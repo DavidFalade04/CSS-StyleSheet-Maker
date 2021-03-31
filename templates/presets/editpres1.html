@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en" style="background-color:{{bckgrdcl}};">
+    <head>
+        <title> My Template</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/pset9/templates/presets/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{
+                margin:0;
+            }
+            
+            .dotted div:hover{
+                border-style:dotted;
+            }
+            .dottedh1 h1:hover{
+              border-style:dotted;
+            }
+
+            .form
+            {
+            background-color:white;
+            z-index:9;
+            padding:1cm;
+            max-width:30%;
+            text-align:center;
+            position: fixed;
+            bottom: 10%;
+            right:30%;
+            border: 3px solid black
+
+            }
+
+            .form-input{
+              width: 100%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              border: none;
+              background: #d8d8d8;
+            }
+            
+            /* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color:#f3f2ed; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-container {
+  display: none;
+  
+  padding: 30px;
+}
+
+.active {
+  background-color: #4169e1;
+  color: black;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover, .dropdown-btn:hover {
+  color:#4169e1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:white;
+  color: black;
+  border-radius: 50%;
+  padding: 15px 20px;
+  border: none;
+  z-index:1;
+  right:15px;
+  top:20px;
+  position:fixed;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.btn{
+  padding:10px;
+  font-size:22px;
+}
+
+.form-input{
+  width:80%;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+        </style>
+    </head>
+
+
+    <body>
+      <div id="body">
+      
+        <div class="dotted">
+        <div style="background-color:{{color1}}; height:70px; font-size:20px; padding:13px; font-family:{{mainbnrfnt}},serif; font-size:{{mainbnrfntsz}}; color:{{mainbantxtcolor}}; height:{{mainbanht}}; width:{{mainbanwt}}; "  class="dotted">
+            <h1 onclick="openForm('Header1')"> My Webpage<h1>
+
+        </div>
+        </div>
+        
+        <p style="color:{{color}}"> hello</p>
+        <p>{{color}}</p>
+        <p>{{mainbantxtcolor}}</p>
+        <p>{{banner1txtcoolor}}</p>
+<div id="openbtn">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+ 
+</div>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <button class="dropdown-btn">All Headers
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container" >
+     <h1 style="font-size:18px; color:#4169e1"> Background-Color </h1>
+            <form action="/edit" method="POST" style="width:80%">
+                <input input autocomplete="on" autofocus class="form-input" name="allbanners" placeholder="color" type="text">
+                <h1 style="font-size:18px; color:#4169e1"> Font & Font-size</h1>
+                <input input autocomplete="on" autofocus class="form-input" name="allbannersfnt" placeholder="font" type="text" style="width:30%">
+                <input input autocomplete="on" autofocus class="form-input" name="allbannersfntsz" placeholder="size" type="text" style="width:20%">
+                <input input autocomplete="on" autofocus class="form-input" name="allbannerstxtcolor" placeholder="Text color" type="text">
+                <input input autocomplete="on" autofocus class="form-input" name="allbannersht" placeholder="Height" type="text" style="width:25%">
+                <input input autocomplete="on" autofocus class="form-input" name="allbannerswt" placeholder="Width" type="text" style="width:25%">
+                   
+                <button class="btn btn-primary" type="submit" class="btn">Submit</button>
+              
+            </form>
+  
+  </div>
+  <button class="dropdown-btn">Background Color
+    <i class="fa fa-caret-down"></i>
+  </button>
+    <div class="dropdown-container" >
+            <form action="/edit" method="POST" style="width:80%">
+                <input input autocomplete="on" autofocus class="form-input" name="backgroundcolor" placeholder="color" type="text">
+                <button class="btn btn-primary" type="submit" class="btn">Submit</button>
+              
+            </form>
+  
+  </div>
+  <button class="dropdown-btn">Div Body
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container" id="dbody">
+     <h1 style="font-size:18px; color:#4169e1"> Background-Color </h1>
+            <form action="/edit" method="POST" style="width:80%">
+                <input input autocomplete="on" autofocus class="form-input" name="bodycolor" placeholder="color" type="text">
+                <h1 style="font-size:18px; color:#4169e1"> Font & Font-size</h1>
+                <input input autocomplete="on" autofocus class="form-input" name="bodyfnt" placeholder="font" type="text" style="width:30%">
+                <input input autocomplete="on" autofocus class="form-input" name="bodyfntsz" placeholder="size" type="text" style="width:20%">
+                <input input autocomplete="on" autofocus class="form-input" name="bodytxtclr" placeholder="Text color" type="text">
+                <input input autocomplete="on" autofocus class="form-input" name="bodyht" placeholder="Height" type="text" style="width:25%">
+                <input input autocomplete="on" autofocus class="form-input" name="bodywt" placeholder="Width" type="text" style="width:25%">
+                   
+                <button class="btn btn-primary" type="submit" class="btn">Submit</button>
+              
+            </form>
+  
+  </div>
+  <button onclick="openForm('save')" style="bottom:1in; position: absolute; background-color:#4167e1;color:white;border-radius:20%; margin-left: 1in; height:60px; width:90px; font-size:30px">Save</button>
+</div>
+              <div class="dotted" id="d1">
+                <div style="padding:1cm; margin:1cm; z-index:1; background-color:{{bodycolor}}; font:{{bodyfnt}}; font-size:{{bodyfntsz}}; color:{{bodytxtclr}}; height:{{bodyht}}; width:{{bodywt}}" >
+            <div onclick="openForm('banner')" class="dottedh1" style="border-style:none" id="b1">
+                <h1 style="background-color:{{color}}; margin:-1cm; text-align:center; padding:.5cm; font-family:{{banr1fnt}},serif; font-size:{{banr1fntsz}}; color:{{ban1textclr}}; height:{{ban1ht}}; width:{{ban1wt}}; text-align: center;" >
+                    topic 1
+                </h1>
+              
+            </div>
+            
+            <p style="margin-top: 2cm; font-size:18px" id="divbody" onclick="opendivbody('dbody')">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus egestas est. Aenean eu dui lacinia, pharetra massa ut, consequat tortor. Maecenas facilisis id purus quis aliquet. Sed sagittis lobortis ante. Nullam ornare lectus enim. In hendrerit, lorem in auctor tincidunt, ligula nunc convallis sem, id fringilla orci mauris ac mi. Nam risus ante, vulputate sit amet imperdiet vitae, ullamcorper sed nulla. Etiam condimentum scelerisque pellentesque. Nunc tristique finibus felis ac viverra. Fusce a faucibus lorem. In sit amet accumsan nunc. Nam blandit purus in volutpat tempus. Nunc id odio urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam luctus cursus dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ut eleifend mauris. Fusce faucibus efficitur libero., quis lacinia lectus imperdiet nec. Aliquam erat volutpat. Mauris mollis in sapien in ultricies. Vivamus ante eros, dignissim a sem et, vestibulum mattis sem. Fusce aliquam condimentum arcu id egestas. Mauris elementum sem semper auctor convallis. Suspendisse massa nisi, sagittis nec suscipit vel, pulvinar eu eros. Mauris elementum dui sit amet ligula aliquet.
+            </p>
+      
+
+        </div>
+        </div>
+        </div>
+      
+
+    <div id="body">
+        <div id="banner" class="form" style="display:none; right:10%; bottom:10% ">
+            <h1 style="margin-top:-5px"> Div header </h1>
+            <p>Enter a valid css color or hexadecimal</p>
+            <form action="/edit" method="POST">
+                <input input autocomplete="on" autofocus class="form-input" name="bannerone" placeholder="Color" type="text">
+                <input input autocomplete="on" autofocus class="form-input" name="banneronefnt" placeholder="Font" type="text" style="width:41%">
+                <input input autocomplete="on" autofocus class="form-input" name="banneronefnt-sz" placeholder="Font-size(px)" type="text" style="width:32%">
+                <input input autocomplete="on" autofocus class="form-input" name="banneronetxtcolor" placeholder="Text color" type="text">
+                <input input autocomplete="on" autofocus class="form-input" name="banneroneht" placeholder="Height" type="text" style="width:36.5%">
+                <input input autocomplete="on" autofocus class="form-input" name="banneronewt" placeholder="Width" type="text" style="width:36.5%">
+                <button class="btn btn-primary" type="submit" class="btn">Submit</button>
+            </form>
+            
+            </div>
+            
+            <div id="Header1" class="form" style="display:none; right:10%; bottom:10%  ">
+            <h1 style="margin-top:-5px"> Main Header </h1>
+            <p>Enter a valid css color or hexadecimal</p>
+            <form action="/edit" method="POST">
+                <input input autocomplete="off" autofocus class="form-input" name="mainbanner" placeholder="Color" type="text">
+                <input input autocomplete="on" autofocus class="form-input" name="mainbnrfnt" placeholder="Font" type="text" style="width:41%">
+                <input input autocomplete="on" autofocus class="form-input" name="mainbnrfnt-sz" placeholder="Font-size(px)" type="text" style="width:32%">
+                <input input autocomplete="on" autofocus class="form-input" name="mainbnrtxtcolor" placeholder="Text color" type="text">
+                <input input autocomplete="on" autofocus class="form-input" name="mainbnrht" placeholder="Height" type="text" style="width:36.5%">
+                <input input autocomplete="on" autofocus class="form-input" name="mainbnrwt" placeholder="Width" type="text" style="width:36.5%">
+                <button class="btn btn-primary" type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+        <div id="body">
+        
+        <div id="save" style=" display: none; z-index:10; height:40%; width:30%; max-height:40%; max-width:30%; left:35%;top:25%; position:fixed"class="form">
+          <div style="top:25%; position:relative">
+          <form action="/save" method="POST">
+                <h2> are you sure you want to save</h2>
+                <button class="btn btn-primary" type="submit" class="btn">Submit</button>
+            </form>
+            </div>
+        </div>
+   
+        <script>
+            function openForm(id) {
+              if (document.getElementById(id).style.display === "none"){
+        
+                document.getElementById(id).style.display = "block";
+              }
+              else{
+                document.getElementById(id).style.display = "none";
+              }
+              
+              if (id === "save"){
+                if (document.getElementById("body").style.filter === "blur(4px)"){
+              document.getElementById("body").style.filter = "none"
+                }
+              else{
+                document.getElementById("body").style.filter = "blur(4px)";
+              document.getElementById("save").style.filter = "none";  
+              }
+              }
+              
+              if (id === "Header1"){
+                document.getElementById("banner").style.display = "none";
+              }
+              else if(id === "banner"){
+                document.getElementById("Header1").style.display = "none";
+              }
+                                }
+                                
+            function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginRight = "250px";
+}
+
+function opendivbody(id) {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginRight = "250px";
+                
+  
+}
+
+      
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginRight = "0";
+}
+
+//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+     
+     
+     document.getElementById("divbody").addEventListener("click", function(){ if (document.getElementById("dbody").style.display === "block") {
+      document.getElementById("dbody").style.display = "none";
+    } else {
+      document.getElementById("dbody").style.display = "block";
+    }});
+  
+
+    </script>
+    </body>
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Choose templates</title>
+    </head>
+    <style>
+        .linkwrap { position:relative; display:inline-block; }
+        .blocker { position:absolute; height:100%; width:100%; z-index:1;  }
+        .linkwrap iframe { z-index: 2; }
+        
+        #overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+    </style>
+    <body>
+        <h1> Choose a preset to start with</h1>
+        <a href="edit" class="linkwrap">
+            <div class="overlay">
+            <iframe class="linkwrap iframe" src="/preset1" height="200" width="300" title="preset 1"></iframe>
+            <p> Preset 1</p>
+            </div>
+        </a>
+        
+        
+    </body>
+
+</html>

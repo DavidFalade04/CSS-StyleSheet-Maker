@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Log in</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <style> 
+        .form
+        {
+    	position: relative;
+
+	float: right;
+	text-align:center;
+	top:10%;
+	
+
+
+        }    
+</style>
+    
+    <body>
+        <h1 class="form" style="margin-left:37%; position:fixed;"> CSS StyleSheet Maker</h1>
+        <div class="form" style="margin-top:10%; position:fixed; left:42%">
+        <form action="/login" method="post">
+            <div >
+                <input autocomplete="off" name="username" placeholder="Username" type="text">
+            </div>
+    <br>
+            <div >
+                <input name="password" placeholder="Password" type="password">
+            </div>
+            <br>
+            <button  type="submit">Log In</button>
+            </div>
+            <br></br>
+        {% if invalid == False %}
+        <p >Username Or Password Is Incorrect</p>
+        {% endif %}
+        </form>
+        
+        <p><a href="register"> register</a> </p>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Register</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <style> 
+    
+
+        }    
+</style>
+    
+    <body>
+ <form action="/register" method="post">
+        <div>
+            <input autocomplete="off" name="username" placeholder="Username" type="text">
+        </div>
+        <div>
+            <input name="password" placeholder="Password" type="password">
+        </div>
+         <div>
+            <input  name="confirmation" placeholder="Confirmation" type="password">
+        </div>
+        <button type="submit"> Register</button>
+    </form>
+            {% if invalid == False %}
+        <p style="color:red">Please Enter Username and Password</p>
+        {%elif char == False%}
+        <p style="color:red">Password requires at least 8 characters</p>
+        {%elif intreq == false%}
+        <p style="color:red">Password requires at least one number</p>
+        {%elif usertaken == False%}
+        <p style="color:red"> Username is Taken</p>
+        {% endif %}
+        
+    </body>
+</html>
