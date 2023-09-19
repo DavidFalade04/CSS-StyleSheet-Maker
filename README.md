@@ -1,5 +1,5 @@
 # CSS StyleSheet Maker
-#### Video Demo:  <https://youtu.be/a4z31vgnrNE>
+
 #### Description:
 My project is a CSS StyleSheet Maker in the form of a web-based application. The purpose of this
 application is to enable users to make and visualize simple stylesheets more effieciently with ease. The stylesheet contains CSS to change background color, text color, font family
